@@ -1,0 +1,31 @@
+.container {
+  background-color: #0652dd;
+  color: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 10vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+}
+
+.button {
+  text-decoration: none;
+}

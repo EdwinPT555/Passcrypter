@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import IntroPage from "./pages/1-IntroPage/IntroPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SignUpPage from "./pages/2-Authentication/SignUpPage";
+import LoginPage from "./pages/2-Authentication/LoginPage";
 
-function App() {
+const App: React.FC<IProps> = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={IntroPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignUpPage} />
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
+
+interface IProps {}
