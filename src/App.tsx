@@ -1,8 +1,8 @@
 import React from "react";
-import IntroPage from "./pages/1-IntroPage/IntroPage";
+import IntroPage from "./pages/1_IntroPage/IntroPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SignUpPage from "./pages/2-Authentication/SignUpPage";
-import LoginPage from "./pages/2-Authentication/LoginPage";
+import SignUpPage from "./pages/2_Authentication/SignUpPage";
+import LoginPage from "./pages/2_Authentication/LoginPage";
 
 const App: React.FC<IProps> = () => {
   return (
