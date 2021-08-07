@@ -1,6 +1,5 @@
 import React from "react";
 import Style from "./IntroPage.module.scss";
-import { VerifiedUser } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
@@ -27,5 +26,3 @@ const IntroPage: React.FC = () => {
 };
 
 export default IntroPage;
-
-interface Props {}
