@@ -1,18 +1,36 @@
 import { Button, CardHeader, Grid, TextField } from "@material-ui/core";
 import React, { useCallback } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Style from "./Authentication.module.scss";
 
 const LoginPage: React.FC<IProps> = () => {
-  // const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
 
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    console.log(e.target);
-  }, []);
-  // const onSubmit = () => {
-  //   history.push("/home");
-  // };
+  const handleEmail = (
+    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setEmail(event.currentTarget.value);
+  };
+  const handlePassword = (
+    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setPassword(event.currentTarget.value);
+  };
+
+  const onSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (email === "edwinpt555@gmail.com" && password === "123") {
+        history.push("/home");
+      } else {
+        alert("Incorrect Email or Password");
+      }
+    },
+    [email, history, password]
+  );
 
   return (
     <div className={Style.container}>
@@ -28,10 +46,12 @@ const LoginPage: React.FC<IProps> = () => {
           <Grid item>
             <TextField
               id="email"
-              label="Email or Phone"
-              type="string"
+              label="Email"
+              type="email"
               required
               autoFocus
+              onChange={handleEmail}
+              value={email}
             />
           </Grid>
 
@@ -42,6 +62,8 @@ const LoginPage: React.FC<IProps> = () => {
               type="password"
               required
               autoFocus
+              onChange={handlePassword}
+              value={password}
             />
           </Grid>
 

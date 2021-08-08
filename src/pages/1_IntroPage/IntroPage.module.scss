@@ -1,11 +1,17 @@
 .container {
-  background-color: #0652dd;
+  background-color: #ff4448;
   color: whitesmoke;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.titleImage {
+  height: 50vh;
+  width: 100vw;
+  object-fit: contain;
 }
 
 .titleContainer {
