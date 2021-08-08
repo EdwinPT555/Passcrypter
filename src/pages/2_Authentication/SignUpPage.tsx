@@ -13,7 +13,7 @@ const SignUpPage: React.FC<IProps> = () => {
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           direction="column"
           spacing={1}
         >
@@ -62,7 +62,13 @@ const SignUpPage: React.FC<IProps> = () => {
           </Grid>
           <br />
 
-          <Grid item container justify="center" direction="row" spacing={2}>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            direction="row"
+            spacing={2}
+          >
             <Grid item>
               <Link to="/" className={Style.link}>
                 <Button variant="contained" color="primary" type="reset">

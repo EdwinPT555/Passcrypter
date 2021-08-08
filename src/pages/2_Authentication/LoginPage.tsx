@@ -1,23 +1,33 @@
 import { Button, CardHeader, Grid, TextField } from "@material-ui/core";
-import React from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import Style from "./Authentication.module.scss";
 
 const LoginPage: React.FC<IProps> = () => {
+  // const history = useHistory();
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    console.log(e.target);
+  }, []);
+  // const onSubmit = () => {
+  //   history.push("/home");
+  // };
+
   return (
     <div className={Style.container}>
-      <form className={Style.form}>
+      <form className={Style.form} onSubmit={onSubmit}>
         <CardHeader title="Login here" style={{ color: "#3f51b5" }} />
         <Grid
           container
           alignItems="center"
-          justify="center"
+          justifyContent="center"
           direction="column"
           spacing={1}
         >
           <Grid item>
             <TextField
-              id="input-with-icon-grid"
+              id="email"
               label="Email or Phone"
               type="string"
               required
@@ -27,7 +37,7 @@ const LoginPage: React.FC<IProps> = () => {
 
           <Grid item>
             <TextField
-              id="input-with-icon-grid"
+              id="password"
               label="Password"
               type="password"
               required
@@ -35,7 +45,13 @@ const LoginPage: React.FC<IProps> = () => {
             />
           </Grid>
 
-          <Grid item container justify="center" direction="row" spacing={2}>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            direction="row"
+            spacing={2}
+          >
             <Grid item>
               <Link to="/" className={Style.link}>
                 <Button variant="contained" color="primary" type="reset">
@@ -45,7 +61,7 @@ const LoginPage: React.FC<IProps> = () => {
             </Grid>
             <Grid item>
               <Button variant="contained" color="primary" type="submit">
-                Submit
+                Login
               </Button>
             </Grid>
           </Grid>
